@@ -2,14 +2,23 @@ const txt = document.querySelector(".input");
 const btn = document.querySelector("#btn");
 const ul = document.querySelector(".ul");
 
-let arr = [{ text: "test", cheked: false }];
+// let arr = [{ 
+//   id: Date.now(),
+//   text: "test", 
+//   cheked: false 
+// }];
 
 btn.addEventListener("click", () => {
+  if(txt.value === '')return
+
   creatLi(txt.value);
 
-  let newList = { text: txt.value, cheked: false };
-  arr.push(newList);
-  console.log(arr);
+  // let newList = { 
+  //   id: Date.now(),
+  //   text: txt.value, 
+  //   cheked: false 
+  // };
+  // arr.push(newList);
 });
 
 function creatLi(a) {
@@ -21,24 +30,25 @@ function creatLi(a) {
 
   li.append(close);
 
+
   ul.append(li);
 
   txt.value = "";
 
   close.addEventListener("click", (e) => {
     let btn = e.target;
-    console.log(btn.parentElement);
 
     let li = btn.parentElement;
     li.classList.add("remove");
+
   });
 }
 
-if (arr.length === 0) {
-  ul.innerHTML = "у вас кончились дела ";
-} else {
-  for (let i = 0; i < arr.length; i++) {
-    creatLi(arr[i].text);
-    console.log(arr);
-  }
-}
+// if (arr.length === 0) {
+//   ul.innerHTML = "у вас кончились дела ";
+// } else {
+//   for (let i = 0; i < arr.length; i++) {
+//     creatLi(arr[i].text);
+
+//   }
+// }
