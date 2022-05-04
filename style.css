@@ -76,3 +76,6 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.remove {
+  display: none;
+}
